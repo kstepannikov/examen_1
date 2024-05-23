@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94de122bdb5d4ad69e21e7f2b0dd11e5" Name="Diagram1">
+        <EntityTypeShape EntityType="bearModel.sysdiagrams" Width="1.5" PointX="3.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Адрес" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Должность" Width="1.5" PointX="1.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.ЕдиницыИзмерения" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.ЗаявкаСнабжение" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Категории" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Контрагенты" Width="1.5" PointX="3" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.НаселПункт" Width="1.5" PointX="1.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Поступления" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Сотрудники" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.СписокПозиций" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Статус" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Товар" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bearModel.Улица" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="bearModel.FK_Адрес_НаселПункт" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK_Адрес_Улица" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK_ЗаявкаСнабжение_Адрес" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK__Сотрудник__Должн__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK_Товар_ЕдиницыИзмерения" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK__Реализаци__Сотру__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK__Чек__Реализация___4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK_ЗаявкаСнабжение_Статус" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK_Поступления_ЗаявкаСнабжение" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK__Товар__Категории__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK_Товар_Контрагенты" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK__Поступлен__Сотру__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK__Чек__Поступления__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK_Поступления_Статус" ManuallyRouted="false" />
+        <AssociationConnector Association="bearModel.FK__Чек__Товар_ИД__4E88ABD4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

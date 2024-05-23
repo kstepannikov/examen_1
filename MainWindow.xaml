@@ -1,0 +1,41 @@
+﻿<Window x:Class="BuildingKirill.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BuildingKirill"
+        mc:Ignorable="d"
+        Title="Основное окно" Height="700" Width="1200" MinHeight="700" MinWidth="1200"  WindowStartupLocation="CenterScreen" Background="#a87353">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <DockPanel VerticalAlignment="Center">
+            <TextBlock Foreground="White" DockPanel.Dock="Left" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" TextAlignment="Center">Малая строительная компания</TextBlock>
+            <Button DockPanel.Dock="Right" Content="Выйти" FontSize="25"  Margin="5" Click="bt_exit_Click"/>
+            <TextBlock Foreground="White" DockPanel.Dock="Right" Text="Вы авторизировались под пользователем:" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" TextAlignment="Left" Name="tb_auth"/>
+        </DockPanel>
+
+
+        <TabControl Name="TabCtrl" TabStripPlacement="Top" Grid.Row="2" FontSize="20" SelectionChanged="TabCtrl_SelectionChanged" >
+            <TabItem  Header="Склад" Name="tabitem_catalog" >
+                <Frame Name="fr_catalog" NavigationUIVisibility="Hidden" />
+            </TabItem>
+            <TabItem Header="Все заявки" Name="tabitem_buy">
+                <Frame Name="fr_buy" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+            <TabItem Header="Все поступления" Name="tabitem_deliv">
+                <Frame Name="fr_deliv" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+            <TabItem Header="Контрагенты и пользователи" Name="tabitem_agent">
+                <Frame Name="fr_agent" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+        </TabControl>
+            
+            
+    </Grid>
+
+</Window>

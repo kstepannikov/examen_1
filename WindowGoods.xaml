@@ -1,0 +1,41 @@
+﻿<Window x:Class="BuildingKirill.WindowGoods"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BuildingKirill"
+        mc:Ignorable="d"
+        Title="Редактирование товара" Height="400" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#a87353">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Name="tbl_title" Content="Редактирование товара" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="24"/>
+        <Label Content="Наименование: *" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Grid.Row="1"/>
+        <Label Content="Категория: *" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Grid.Row="2"/>
+        <Label Content="Ед. Измер: *" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Grid.Row="3"/>
+        <Label Content="Основной поставщик:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Grid.Row="4"/>
+        <Label Content="Остаток: *" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Grid.Row="5"/>
+
+        <TextBox Name="tb_name" FontSize="18" Grid.Column="1" Grid.Row="1" Height="30" Margin="5" Text="{Binding Наименование}" />
+        <ComboBox Name="cmb_category" FontSize="18" Grid.Column="1" Grid.Row="2" Height="30" Margin="5" SelectedItem="{Binding Категории}" DisplayMemberPath="Наименование" />
+        <ComboBox Name="cmb_edizm" FontSize="18" Grid.Column="1" Grid.Row="3" Height="30" Margin="5" SelectedItem="{Binding ЕдиницыИзмерения}" DisplayMemberPath="Наименование" />
+        <ComboBox Name="cmb_postav" FontSize="18" Grid.Column="1" Grid.Row="4" Height="30" Margin="5" SelectedItem="{Binding Контрагенты}" DisplayMemberPath="ПолноеНаименование" />
+       
+        <TextBox Name="tb_ost" FontSize="18" Grid.Column="1" Grid.Row="5" Height="30" Margin="5"  Text="{Binding Остаток}" PreviewTextInput="tb_ost_PreviewTextInput"/>
+
+
+        <Button Name="bt_del" Grid.Column="0" Grid.Row="6" Margin="5" Content="Отмена" FontSize="18" Click="bt_del_Click"/>
+        <Button Name="but_save" Grid.Column="1" Grid.Row="6" Margin="5" Content="Cохранить" FontSize="18" Click="but_save_Click"/>
+    </Grid>
+</Window>

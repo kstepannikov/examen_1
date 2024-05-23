@@ -1,0 +1,34 @@
+﻿<Page x:Class="BuildingKirill.PageAgent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BuildingKirill"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAgent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Margin="5" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" IsReadOnly="True" Name="dg_buy" SelectedValuePath="Контрагент_ИД" SelectionChanged="dg_buy_click" SelectionMode="Single" SelectionUnit="FullRow">
+            <DataGrid.Columns >
+                <DataGridTextColumn Width="1.5*" Header="Полное наименование" Binding="{Binding ПолноеНаименование}"/>
+                <DataGridTextColumn Width="1*" Header="Краткое наименование" Binding="{Binding КраткоеНаименование}"/>
+                <DataGridTextColumn Width="120" Header="ИНН" Binding="{Binding ИНН}"/>
+                <DataGridTextColumn Width="150" Header="ОГРН" Binding="{Binding ОГРН}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Добавить" Margin="5 5 70 5" Width="70" Click="bt_addbuy_Click" Height="30"/>
+            <TextBox Name="tb_search" Width="200" VerticalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" Margin="5" Height="30" TextChanged="tb_search_TextChanged"/>
+
+            <Label Content="Контрагенты" VerticalAlignment="Center" Margin="10" FontSize="20" Height="35"/>
+
+        </StackPanel>
+    </Grid>
+</Page>

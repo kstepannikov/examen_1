@@ -1,0 +1,48 @@
+﻿<Page x:Class="BuildingKirill.PageDeliv"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BuildingKirill"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" 
+      Title="PageDeliv">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Margin="5" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" IsReadOnly="True" Name="dg_buy" SelectedValuePath="Поступления_ИД" SelectionChanged="dg_buy_click" SelectionMode="Single" SelectionUnit="FullRow">
+            <DataGrid.Columns >
+                <DataGridTextColumn Width="60" Header="№" Binding="{Binding НомерПоступления}" />
+                <DataGridTextColumn Width="100" Header="Статус" Binding="{Binding Статус.Наименование}" />
+
+                <DataGridTextColumn Width=".8*" Header="Кем создано">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1} {2} ({3})">
+                            <Binding Path="Сотрудники.Фамилия" />
+                            <Binding Path="Сотрудники.Имя" />
+                            <Binding Path="Сотрудники.Отчество" />
+                            <Binding Path="Сотрудники.Должность.Наименование" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Width=".4*" Header="ДатаСоздания" Binding="{Binding ДатаСоздания, StringFormat='dd.MM.yy HH:mm'}"/>
+                <DataGridTextColumn Width=".25*" Header="Позиций" Binding="{Binding СписокПозиций.Count}"/>
+                <DataGridTextColumn Width=".25*" Header="Получено" Binding="{Binding УчтеноНаСкладеТекст}"/>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Добавить" Margin="5 5 70 5" Width="70" Click="bt_addbuy_Click" Height="30"/>
+
+            <TextBox Name="tb_search" Width="200" VerticalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" Margin="5" Height="30" TextChanged="tb_search_TextChanged"/>
+
+        </StackPanel>
+    </Grid>
+</Page>
